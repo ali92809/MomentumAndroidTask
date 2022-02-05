@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">MomentumTask</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_an_ingredient">Enter an ingredient list list for what you are \ncooking, like <font color='#6acc00'>\"1 cup rice, 10 oz chickpeas\"</font>, \netc. \nEnter each ingredient on a new line.</string>
+    <string name="nutrition_analysis_api_ndemo">Nutrition Analysis API \nDemo</string>
+    <string name="analyze">Analyze</string>
+    <string name="disable">Disable</string>
+    <string name="new_recipe">New recipe</string>
+    <string name="weight">Weight</string>
+    <string name="food">Food</string>
+    <string name="unit">Unit</string>
+    <string name="qty">Qty</string>
+    <string name="calculate">Calculate</string>
+    <string name="nutrition_facts">Nutrition Facts</string>
+    <string name="amount_per_serving">Amount Per Serving</string>
+    <string name="calories">Calories</string>
+    <string name="daily_value">% Daily Value*</string>
+    <string name="total_fat">Total Fat</string>
+    <string name="saturated_fat">Saturated Fat</string>
+    <string name="cholesterol">Cholesterol</string>
+    <string name="sodium">Sodium</string>
+    <string name="total_carbohydrate">Total Carbohydrate</string>
+    <string name="dietary_fiber">Dietary Fiber</string>
+    <string name="total_sugars">Total Sugars</string>
+    <string name="includes">Includes</string>
+    <string name="protein">Protein</string>
+    <string name="vitamin_d">Vitamin D</string>
+    <string name="calcium">Calcium</string>
+    <string name="iron">Iron</string>
+    <string name="potassium">Potassium</string>
+    <string name="trans_fat">Trans Fat</string>
+    <string name="percent_daily_values_are_based_on_a_2000_calorie_diet">*Percent Daily Values are based on a 2000 calorie diet</string>
+    <string name="We_cannot_calculate">We cannot calculate the nutrition for some ingredients. Please check the ingredient spelling or if you have entered a quantities for the ingredients.</string>
+    <string name="AddedSugars">- Added Sugars</string>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/function1Fragment">
+
+    <fragment
+        android:id="@+id/function1Fragment"
+        android:name="com.elprog.momentumtask.presentation.ui.fragments.function1.Function1Fragment"
+        android:label="fragment_function1"
+        tools:layout="@layout/fragment_function1">
+        <action
+            android:id="@+id/action_function1Fragment_to_function2Fragmen"
+            app:destination="@id/function2Fragmen" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/function2Fragmen"
+        android:name="com.elprog.momentumtask.presentation.ui.fragments.function2.Function2Fragmen"
+        android:label="fragment_function2"
+        tools:layout="@layout/fragment_function2">
+        <action
+            android:id="@+id/action_function2Fragmen_to_function3Fragment"
+            app:destination="@id/function3Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/function3Fragment"
+        android:name="com.elprog.momentumtask.presentation.ui.fragments.function3.Function3Fragment"
+        android:label="fragment_function3"
+        tools:layout="@layout/fragment_function3" />
+</navigation>
