@@ -45,13 +45,15 @@ public class IngredientListAdapter extends RecyclerView.Adapter<IngredientListAd
     @Override
     public void onBindViewHolder(@NonNull IngredientListViewHolder holder, int position) {
         Ingredient ingredient = ingredientList.get(position);
-        holder.binding.qty.setText(String.format(" %.0f", ingredient.getParsed().get(0).getQuantity()));
-        holder.binding.Unit.setText(String.valueOf(ingredient.getParsed().get(0).getMeasure()));
-        holder.binding.Food.setText(String.valueOf(ingredient.getParsed().get(0).getFood()));
-        holder.binding.Calories.setText(String.format(" %.1f", ingredient.getParsed().get(0).getNutrients().getENERC_KCAL().getQuantity()) +
-                ingredient.getParsed().get(0).getNutrients().getENERC_KCAL().getUnit());
-        holder.binding.Weight.setText(String.format(" %.0f", ingredient.getParsed().get(0).getWeight()) +
-                " g");
+        if (ingredient.getParsed()!=null) {
+            holder.binding.qty.setText(String.format(" %.0f", ingredient.getParsed().get(0).getQuantity()));
+            holder.binding.Unit.setText(String.valueOf(ingredient.getParsed().get(0).getMeasure()));
+            holder.binding.Food.setText(String.valueOf(ingredient.getParsed().get(0).getFoodMatch()));
+            holder.binding.Calories.setText(String.format(" %.1f", ingredient.getParsed().get(0).getNutrients().getENERC_KCAL().getQuantity()) +
+                    ingredient.getParsed().get(0).getNutrients().getENERC_KCAL().getUnit());
+            holder.binding.Weight.setText(String.format(" %.0f", ingredient.getParsed().get(0).getWeight()) +
+                    " g");
+        }
 
     }
 

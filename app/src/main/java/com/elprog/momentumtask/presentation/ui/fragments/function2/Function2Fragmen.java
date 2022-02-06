@@ -15,10 +15,12 @@ import android.widget.Toast;
 import com.elprog.momentumtask.R;
 import com.elprog.momentumtask.databinding.FragmentFunction2Binding;
 import com.elprog.momentumtask.domain.model.RequestBodyData.body;
+import com.elprog.momentumtask.domain.model.nutritionalInformation.Ingredient;
 import com.elprog.momentumtask.domain.model.nutritionalInformation.NutritionalInfoResponse;
 import com.elprog.momentumtask.presentation.ui.adapters.IngredientListAdapter;
 import com.elprog.momentumtask.presentation.viewModels.FunctionsViewModel;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -80,7 +82,7 @@ public class Function2Fragmen extends Fragment {
             @Override
             public void onClick(View view) {
                 if (nutritionalInfoResponse != null) {
-                    if (nutritionalInfoResponse.getTotalNutrientsKCal() != null) {
+                    if (nutritionalInfoResponse.getTotalNutrients() != null) {
                         goToFunction3();
                     } else {
                         Toast.makeText(getContext(), getText(R.string.We_cannot_calculate), Toast.LENGTH_SHORT).show();
@@ -103,11 +105,9 @@ public class Function2Fragmen extends Fragment {
      * also i can put implements Parcelable
      * <p>
      * to pass data to function 3
-     *
      */
     private void goToFunction3() {
         Bundle bundle = new Bundle();
-        bundle.putSerializable("totalNutrientsKCal", nutritionalInfoResponse.getTotalNutrientsKCal());
         bundle.putSerializable("totalDaily", nutritionalInfoResponse.getTotalDaily());
         bundle.putSerializable("totalNutrients", nutritionalInfoResponse.getTotalNutrients());
         Navigation.findNavController(getView()).navigate(R.id.action_function2Fragmen_to_function3Fragment, bundle);
@@ -126,13 +126,24 @@ public class Function2Fragmen extends Fragment {
                         if (nutritionalInfoResponse != null) {
                             Function2Fragmen.this.nutritionalInfoResponse = nutritionalInfoResponse;
                             if (nutritionalInfoResponse.getIngredients() != null) {
-                               ingredientListAdapter.setIngredientList(nutritionalInfoResponse
+                                addDataToAdapter(nutritionalInfoResponse
                                         .getIngredients());
                             }
                         }
 
                     }
                 });
+    }
+
+    void addDataToAdapter(List<Ingredient> ingredientlist) {
+
+        List<Ingredient> newIngredientList = new ArrayList<>();
+        for (int i = 0; i < ingredientlist.size(); i++) {
+            if (ingredientlist.get(i).getParsed() != null) {
+                newIngredientList.add(ingredientlist.get(i));
+            }
+        }
+        ingredientListAdapter.setIngredientList(newIngredientList);
     }
 
 }
