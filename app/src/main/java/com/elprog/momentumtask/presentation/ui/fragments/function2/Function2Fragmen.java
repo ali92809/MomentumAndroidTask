@@ -61,13 +61,16 @@ public class Function2Fragmen extends Fragment {
         /***
          * app_id and app_key you can get from
          *    https://developer.edamam.com/edamam-nutrition-api
+         *
+
+         app_id=47379841&app_key=d28718060b8adfd39783ead254df7f92
          * */
         //convert string to array list
         List<String> ingredientList = Arrays.asList(ingredientString.split(","));
         body body = new body(ingredientList);
         requestNutritionalInformation(
-                "10e14143",
-                "f4aa717b0f6f781c2c9e65d482a5ca15",
+                "47379841",
+                "d28718060b8adfd39783ead254df7f92",
                 body);
     }
 
@@ -100,6 +103,7 @@ public class Function2Fragmen extends Fragment {
      * also i can put implements Parcelable
      * <p>
      * to pass data to function 3
+     *
      */
     private void goToFunction3() {
         Bundle bundle = new Bundle();
